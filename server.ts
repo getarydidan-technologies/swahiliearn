@@ -3,7 +3,8 @@
  * Port 3000, Relational Database, Real-time APIs, Server-side Rewards & Timers
  */
 
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
+import type { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
@@ -456,7 +457,7 @@ app.get('/api/settings', async (_req: Request, res: Response) => {
       tiktok_url: 'https://www.tiktok.com/@swahiliearn.site?_r=1&_t=ZS-9AKTTdEWwMA',
       facebook_url: 'https://www.facebook.com/share/1HgRiAX6J2/',
       sponsor_url: 'https://onlinepay-d7wjpyve.manus.space/',
-      whatsapp_support_url: 'https://wa.me/0618466062',
+      whatsapp_support_url: 'https://wa.me/message/EP72QM4VJRTIA1',
       whatsapp_channel_url: 'https://whatsapp.com/channel/0029VbEGCJ3EgGfNE6THN73q',
       support_sms_number: '0743697677',
       verified_payments: JSON.stringify([

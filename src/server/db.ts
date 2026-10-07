@@ -155,7 +155,7 @@ export async function initDatabase() {
       ('tiktok_url', 'https://www.tiktok.com/@swahiliearn.site?_r=1&_t=ZS-9AKTTdEWwMA'),
       ('facebook_url', 'https://www.facebook.com/share/1HgRiAX6J2/'),
       ('sponsor_url', 'https://onlinepay-d7wjpyve.manus.space/'),
-      ('whatsapp_support_url', 'https://wa.me/0618466062'),
+      ('whatsapp_support_url', 'https://wa.me/message/EP72QM4VJRTIA1'),
       ('whatsapp_channel_url', 'https://whatsapp.com/channel/0029VbEGCJ3EgGfNE6THN73q'),
       ('support_sms_number', '0743697677')
     ON CONFLICT (key) DO NOTHING;

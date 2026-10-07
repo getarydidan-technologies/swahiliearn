@@ -99,18 +99,40 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
     ...options.headers,
   };
 
-  const response = await fetch(endpoint, {
-    ...options,
-    headers,
-  });
+  try {
+    const response = await fetch(endpoint, {
+      ...options,
+      headers,
+    });
 
-  const data = await response.json().catch(() => ({}));
+    const data = await response.json().catch(() => ({}));
 
-  if (!response.ok) {
-    throw new Error(data.error || `Request failed with status ${response.status}`);
+    if (!response.ok) {
+      throw new Error(data.error || `Request failed with status ${response.status}`);
+    }
+
+    return data;
+  } catch (err: any) {
+    // Provide safe defaults when running as a static export without backend server
+    if (endpoint === '/api/profiles') {
+      const { DEFAULT_PROFILES } = await import('./defaultProfiles');
+      return { profiles: DEFAULT_PROFILES } as unknown as T;
+    }
+    if (endpoint === '/api/settings') {
+      return {
+        settings: {
+          whatsapp_support_url: 'https://wa.me/message/EP72QM4VJRTIA1',
+          whatsapp_channel_url: 'https://whatsapp.com/channel/0029VbEGCJ3EgGfNE6THN73q',
+          support_sms_number: '0743697677',
+          instagram_url: 'https://www.instagram.com/odp_tanzania?stkn=c3M0aDFiajM3Z3J3',
+          tiktok_url: 'https://www.tiktok.com/@swahiliearn.site?_r=1&_t=ZS-9AKTTdEWwMA',
+          facebook_url: 'https://www.facebook.com/share/1HgRiAX6J2/',
+          sponsor_url: 'https://onlinepay-d7wjpyve.manus.space/',
+        },
+      } as unknown as T;
+    }
+    throw err;
   }
-
-  return data;
 }
 
 export const api = {

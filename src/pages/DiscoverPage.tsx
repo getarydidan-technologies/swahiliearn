@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { api, ChatProfile } from '../lib/api';
+import { DEFAULT_PROFILES } from '../lib/defaultProfiles';
 import {
   MessageSquare,
   Search,
@@ -20,8 +21,8 @@ interface DiscoverPageProps {
 export const DiscoverPage: React.FC<DiscoverPageProps> = ({ onNavigate }) => {
   const { user } = useAuth();
   const { t, language } = useLanguage();
-  const [profiles, setProfiles] = useState<ChatProfile[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [profiles, setProfiles] = useState<ChatProfile[]>(DEFAULT_PROFILES);
+  const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterCountry, setFilterCountry] = useState('All');
 

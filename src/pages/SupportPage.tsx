@@ -101,7 +101,7 @@ export const SupportPage: React.FC<SupportPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
             {/* WhatsApp */}
             <a
-              href="https://wa.me/0618466062"
+              href="https://wa.me/message/EP72QM4VJRTIA1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-5 rounded-2xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition flex flex-col items-center text-center gap-2 group cursor-pointer"
@@ -113,7 +113,7 @@ export const SupportPage: React.FC<SupportPageProps> = ({ onNavigate }) => {
                 WHATSAPP
               </span>
               <span className="text-xs font-bold text-emerald-700">
-                0618 466 062
+                Customer Care WhatsApp
               </span>
               <span className="text-[11px] text-emerald-600 font-medium">
                 Bonyeza hapa kuanza chati papo hapo

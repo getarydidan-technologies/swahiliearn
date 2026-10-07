@@ -94,12 +94,12 @@ export const WithdrawActivationModal: React.FC<WithdrawActivationModalProps> = (
               Ukishalipia akaunti yako mtafute customer care kwa ajili ya maelekezo zaidi
             </p>
             <a
-              href="https://wa.me/0618466062"
+              href="https://wa.me/message/EP72QM4VJRTIA1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition"
             >
-              <span>Mtafute Customer Care (WhatsApp: 0618466062) →</span>
+              <span>Mtafute Customer Care (WhatsApp) →</span>
             </a>
           </div>
         </div>

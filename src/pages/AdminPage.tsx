@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { api, ChatProfile } from '../lib/api';
+import avatarSarah from '../assets/images/avatar_sarah_partner_1790978693289.jpg';
+import avatarMark from '../assets/images/avatar_mark_partner_1790978683862.jpg';
+import avatarEliza from '../assets/images/avatar_eliza_partner_1790978674237.jpg';
+import avatarDavid from '../assets/images/avatar_david_partner_1790979990804.jpg';
 import {
   ShieldCheck,
   ShieldAlert,
@@ -43,10 +47,10 @@ interface AdminPageProps {
 
 // 12 High-Quality Preset Avatars so admin can pick instantly with 1 tap (No URL required)
 const AVATAR_PRESETS = [
-  { label: 'Sarah (USA)', url: '/src/assets/images/avatar_sarah_partner_1790978693289.jpg', country: 'United States' },
-  { label: 'Mark (UK)', url: '/src/assets/images/avatar_mark_partner_1790978683862.jpg', country: 'United Kingdom' },
-  { label: 'Eliza (Poland)', url: '/src/assets/images/avatar_eliza_partner_1790978674237.jpg', country: 'Poland' },
-  { label: 'David (Canada)', url: '/src/assets/images/avatar_david_partner_1790979990804.jpg', country: 'Canada' },
+  { label: 'Sarah (USA)', url: avatarSarah, country: 'United States' },
+  { label: 'Mark (UK)', url: avatarMark, country: 'United Kingdom' },
+  { label: 'Eliza (Poland)', url: avatarEliza, country: 'Poland' },
+  { label: 'David (Canada)', url: avatarDavid, country: 'Canada' },
   { label: 'Elena (Sweden)', url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80', country: 'Sweden' },
   { label: 'Michael (Australia)', url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80', country: 'Australia' },
   { label: 'Sophie (France)', url: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80', country: 'France' },
@@ -96,7 +100,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
     tiktok_url: 'https://www.tiktok.com/@swahiliearn.site?_r=1&_t=ZS-9AKTTdEWwMA',
     facebook_url: 'https://www.facebook.com/share/1HgRiAX6J2/',
     sponsor_url: 'https://onlinepay-d7wjpyve.manus.space/',
-    whatsapp_support_url: 'https://wa.me/0618466062',
+    whatsapp_support_url: 'https://wa.me/message/EP72QM4VJRTIA1',
     whatsapp_channel_url: 'https://whatsapp.com/channel/0029VbEGCJ3EgGfNE6THN73q',
     support_sms_number: '0743697677',
   });
@@ -149,7 +153,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
     occupation: 'Tourist / Explorer',
     chat_rate_tzs: 80000,
     session_duration_minutes: 10,
-    avatar_url: '/src/assets/images/avatar_sarah_partner_1790978693289.jpg',
+    avatar_url: avatarSarah,
     bio: 'Traveling to East Africa soon. I want to learn basic daily conversation and polite greetings.',
     personality: 'Friendly, patient, eager to learn.',
   });
@@ -281,7 +285,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
       occupation: 'Tourist / Explorer',
       chat_rate_tzs: 80000,
       session_duration_minutes: 10,
-      avatar_url: '/src/assets/images/avatar_sarah_partner_1790978693289.jpg',
+      avatar_url: avatarSarah,
       bio: 'Habari! I want to practice daily conversational Swahili, greetings, and common phrases with native speakers.',
       personality: 'Kind, polite, patient, eager to learn.',
     });
@@ -1375,7 +1379,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   required
                   value={settings.whatsapp_support_url || ''}
                   onChange={(e) => setSettings({ ...settings, whatsapp_support_url: e.target.value })}
-                  placeholder="https://wa.me/0618466062"
+                  placeholder="https://wa.me/message/EP72QM4VJRTIA1"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-xs text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
               </div>

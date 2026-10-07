@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImage from '../../assets/images/swahili_earn_logo_1791303181206.jpg';
 
 interface LogoProps {
   className?: string;
@@ -17,7 +18,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
       className={`relative flex items-center justify-center overflow-hidden bg-white shadow-md shadow-blue-500/20 border border-blue-100 flex-shrink-0 transition-transform duration-200 hover:scale-105 ${sizeClasses} ${className}`}
     >
       <img
-        src="/src/assets/images/swahili_earn_logo_1791303181206.jpg"
+        src={logoImage}
         alt="SWAHILI EARN Logo"
         className="w-full h-full object-cover"
       />

@@ -19,6 +19,8 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { api, ChatProfile } from '../lib/api';
+import { DEFAULT_PROFILES } from '../lib/defaultProfiles';
+import heroImage from '../assets/images/hero_swahili_earn_1790978664336.jpg';
 
 interface HomePageProps {
   onNavigate: (tab: string, params?: any) => void;
@@ -47,13 +49,13 @@ const VERIFIED_PAYMENTS = [
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const { user } = useAuth();
   const { t, language } = useLanguage();
-  const [profiles, setProfiles] = useState<ChatProfile[]>([]);
-  const [loadingProfiles, setLoadingProfiles] = useState(true);
+  const [profiles, setProfiles] = useState<ChatProfile[]>(DEFAULT_PROFILES.slice(0, 3));
+  const [loadingProfiles, setLoadingProfiles] = useState(false);
 
   // Dynamic verified payments dataset
   const [paymentsList, setPaymentsList] = useState(VERIFIED_PAYMENTS);
   const [siteSettings, setSiteSettings] = useState<Record<string, string>>({
-    whatsapp_support_url: 'https://wa.me/0618466062',
+    whatsapp_support_url: 'https://wa.me/message/EP72QM4VJRTIA1',
     whatsapp_channel_url: 'https://whatsapp.com/channel/0029VbEGCJ3EgGfNE6THN73q',
     support_sms_number: '0743697677',
   });
@@ -172,7 +174,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             {/* Clickable redirection */}
             <a
-              href="https://wa.me/0618466062"
+              href="https://wa.me/message/EP72QM4VJRTIA1"
               target="_blank"
               rel="noopener noreferrer"
               className="block group cursor-pointer"
@@ -188,7 +190,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </p>
               <div className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-black text-emerald-700 group-hover:text-emerald-800 underline decoration-emerald-500 underline-offset-2">
                 <MessageCircle className="w-4 h-4 text-emerald-600 fill-emerald-100" />
-                <span>Bofya kuanza chati ya WhatsApp (0618466062) →</span>
+                <span>Bofya kuanza chati ya WhatsApp (Customer Care) →</span>
               </div>
             </a>
           </div>
@@ -292,7 +294,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 bg-white group">
                   <img
-                    src="/src/assets/images/hero_swahili_earn_1790978664336.jpg"
+                    src={heroImage}
                     alt="Digital professional conversing and teaching Swahili on smartphone"
                     referrerPolicy="no-referrer"
                     className="w-full h-80 sm:h-96 object-cover object-top transition duration-500 group-hover:scale-105"
@@ -675,7 +677,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
                 {/* 3. WHATSAPP */}
                 <a
-                  href={siteSettings.whatsapp_support_url || 'https://wa.me/0618466062'}
+                  href={siteSettings.whatsapp_support_url || 'https://wa.me/message/EP72QM4VJRTIA1'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-5 rounded-2xl bg-slate-50 hover:bg-emerald-50/80 border border-slate-200 hover:border-emerald-500 transition flex flex-col items-center text-center gap-2 group cursor-pointer"
@@ -687,7 +689,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     WHATSAPP
                   </span>
                   <span className="text-xs font-bold text-emerald-600">
-                    {siteSettings.whatsapp_support_url?.replace(/[^0-9]/g, '') || '0618 466 062'}
+                    Msaada wa WhatsApp
                   </span>
                   <span className="text-[11px] text-slate-500">
                     Chata moja kwa moja na admin
